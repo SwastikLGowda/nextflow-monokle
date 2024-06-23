@@ -8,7 +8,7 @@ import {ResourceMeta} from '@shared/models/k8sResource';
 import {ResourceKindHandler} from '@shared/models/resourceKindHandler';
 
 const NodeHandler: ResourceKindHandler = {
-  kind: 'Node',
+  kind: 'Machines',
   apiVersionMatcher: '**',
   isNamespaced: false,
   navigatorPath: [navSectionNames.K8S_RESOURCES, navSectionNames.CONFIGURATION, 'Nodes'],

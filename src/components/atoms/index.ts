@@ -9,7 +9,7 @@ export {default as ImageIcon} from './ImageIcon';
 export {default as InputTags} from './InputTags';
 export {default as KeyValueInput} from './KeyValueInput';
 export {default as ScrollIntoView} from './ScrollIntoView';
-export {default as SearchInput} from './SearchInput';
+// export {default as SearchInput} from './SearchInput';
 export {default as Spinner} from './Spinner';
 export {IconButton, PrimaryButton, SecondaryButton, TitleBarWrapper} from './StyledComponents';
 export {default as SelectItemImage} from './SelectItemImage';

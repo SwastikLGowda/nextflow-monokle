@@ -7,14 +7,14 @@ import path from 'path';
 
 import {parseAllYamlDocuments} from '@utils/yaml';
 
-import EndpointSliceHandler from '@src/kindhandlers/EndpointSlice.handler';
-import HorizontalPodAutoscalerHandler from '@src/kindhandlers/HorizontalPodAutoscaler.handler';
-import LimitRangeHandler from '@src/kindhandlers/LimitRange.handler';
-import ResourceQuotaHandler from '@src/kindhandlers/ResourceQuota.handler';
-import StorageClassHandler from '@src/kindhandlers/StorageClass.handler';
-import ValidatingAdmissionPolicyHandler from '@src/kindhandlers/ValidatingAdmissionPolicy.handler';
-import ValidatingAdmissionPolicyBindingHandler from '@src/kindhandlers/ValidatingAdmissionPolicyBinding.handler';
-import VolumeAttachmentHandler from '@src/kindhandlers/VolumeAttachment.handler';
+// import EndpointSliceHandler from '@src/kindhandlers/EndpointSlice.handler';
+// import HorizontalPodAutoscalerHandler from '@src/kindhandlers/HorizontalPodAutoscaler.handler';
+// import LimitRangeHandler from '@src/kindhandlers/LimitRange.handler';
+// import ResourceQuotaHandler from '@src/kindhandlers/ResourceQuota.handler';
+// import StorageClassHandler from '@src/kindhandlers/StorageClass.handler';
+// import ValidatingAdmissionPolicyHandler from '@src/kindhandlers/ValidatingAdmissionPolicy.handler';
+// import ValidatingAdmissionPolicyBindingHandler from '@src/kindhandlers/ValidatingAdmissionPolicyBinding.handler';
+// import VolumeAttachmentHandler from '@src/kindhandlers/VolumeAttachment.handler';
 import {extractKindHandler} from '@src/kindhandlers/common/customObjectKindHandler';
 
 import {ResourceMeta} from '@shared/models/k8sResource';
@@ -22,31 +22,31 @@ import {ResourceKindHandler} from '@shared/models/resourceKindHandler';
 import {getSubfolders, readFiles} from '@shared/utils/fileSystem';
 import {getStaticResourcePath} from '@shared/utils/resource';
 
-import ClusterRoleHandler from './ClusterRole.handler';
-import ClusterRoleBindingHandler from './ClusterRoleBinding.handler';
-import ConfigMapHandler from './ConfigMap.handler';
-import CronJobHandler from './CronJob.handler';
-import CustomResourceDefinitionHandler from './CustomResourceDefinition.handler';
-import DaemonSetHandler from './DaemonSet.handler';
-import DeploymentHandler from './Deployment.handler';
-import EndpointsHandler from './Endpoints.handler';
-import EventHandler from './EventHandler';
-import IngressHandler from './Ingress.handler';
+// import ClusterRoleHandler from './ClusterRole.handler';
+// import ClusterRoleBindingHandler from './ClusterRoleBinding.handler';
+// import ConfigMapHandler from './ConfigMap.handler';
+// import CronJobHandler from './CronJob.handler';
+// import CustomResourceDefinitionHandler from './CustomResourceDefinition.handler';
+// import DaemonSetHandler from './DaemonSet.handler';
+// import DeploymentHandler from './Deployment.handler';
+// import EndpointsHandler from './Endpoints.handler';
+// import EventHandler from './EventHandler';
+// import IngressHandler from './Ingress.handler';
 import JobHandler from './Job.handler';
-import NamespaceHandler from './Namespace.handler';
-import NetworkPolicyHandler from './NetworkPolicy.handler';
+// import NamespaceHandler from './Namespace.handler';
+// import NetworkPolicyHandler from './NetworkPolicy.handler';
 import NodeHandler from './NodeHandler';
 import PersistentVolumeHandler from './PersistentVolume.handler';
-import PersistentVolumeClaimHandler from './PersistentVolumeClaim.handler';
+// import PersistentVolumeClaimHandler from './PersistentVolumeClaim.handler';
 import PodHandler from './Pod.handler';
-import ReplicaSetHandler from './ReplicaSet.handler';
-import ReplicationControllerHandler from './ReplicationController.handler';
-import RoleHandler from './Role.handler';
-import RoleBindingHandler from './RoleBinding.handler';
-import SecretHandler from './Secret.handler';
-import ServiceHandler from './Service.handler';
-import ServiceAccountHandler from './ServiceAccount.handler';
-import StatefulSetHandler from './StatefulSet.handler';
+// import ReplicaSetHandler from './ReplicaSet.handler';
+// import ReplicationControllerHandler from './ReplicationController.handler';
+// import RoleHandler from './Role.handler';
+// import RoleBindingHandler from './RoleBinding.handler';
+// import SecretHandler from './Secret.handler';
+// import ServiceHandler from './Service.handler';
+// import ServiceAccountHandler from './ServiceAccount.handler';
+// import StatefulSetHandler from './StatefulSet.handler';
 import {getFormSchema, getUiSchema} from './common/formLoader';
 
 /**
@@ -54,39 +54,10 @@ import {getFormSchema, getUiSchema} from './common/formLoader';
  */
 
 export const ResourceKindHandlers: ResourceKindHandler[] = [
-  ClusterRoleHandler,
-  ClusterRoleBindingHandler,
-  ConfigMapHandler,
-  CronJobHandler,
-  CustomResourceDefinitionHandler,
-  DaemonSetHandler,
-  DeploymentHandler,
-  EndpointsHandler,
-  EndpointSliceHandler,
-  IngressHandler,
   JobHandler,
-  NetworkPolicyHandler,
-  NamespaceHandler,
-  PersistentVolumeClaimHandler,
-  PersistentVolumeHandler,
   PodHandler,
-  ReplicaSetHandler,
-  ReplicationControllerHandler,
-  RoleHandler,
-  RoleBindingHandler,
-  SecretHandler,
-  ServiceHandler,
-  ServiceAccountHandler,
-  StatefulSetHandler,
-  VolumeAttachmentHandler,
-  StorageClassHandler,
-  ResourceQuotaHandler,
-  LimitRangeHandler,
-  HorizontalPodAutoscalerHandler,
   NodeHandler,
-  EventHandler,
-  ValidatingAdmissionPolicyHandler,
-  ValidatingAdmissionPolicyBindingHandler,
+  PersistentVolumeHandler,
 ];
 
 const HandlerByResourceKind = Object.fromEntries(

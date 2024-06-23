@@ -6,7 +6,7 @@ import {ResourceMeta} from '@shared/models/k8sResource';
 import {ResourceKindHandler} from '@shared/models/resourceKindHandler';
 
 const JobHandler: ResourceKindHandler = {
-  kind: 'Job',
+  kind: 'Nextflow Jobs',
   apiVersionMatcher: '**',
   isNamespaced: true,
   navigatorPath: [navSectionNames.K8S_RESOURCES, navSectionNames.WORKLOADS, 'Jobs'],

@@ -26,8 +26,6 @@ export const resourceKindRequestURLs: {[resourceKind: string]: string} = {
   ClusterRole: `/apis/rbac.authorization.k8s.io/v1/clusterroles`,
   ClusterRoleBinding: `/apis/rbac.authorization.k8s.io/v1/clusterrolebindings`,
   ConfigMap: `/api/v1/configmaps`,
-  CronJob: `/apis/batch/v1/cronjobs`,
-  DaemonSet: `/apis/apps/v1/daemonsets`,
   Deployment: `/apis/apps/v1/deployments`,
   EndpointSlice: `/apis/discovery.k8s.io/v1/endpointslices`,
   Endpoints: `/api/v1/endpoints`,

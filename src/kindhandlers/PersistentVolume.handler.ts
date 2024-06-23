@@ -6,7 +6,7 @@ import {ResourceMeta} from '@shared/models/k8sResource';
 import {ResourceKindHandler} from '@shared/models/resourceKindHandler';
 
 const PersistentVolumeHandler: ResourceKindHandler = {
-  kind: 'PersistentVolume',
+  kind: 'Storage',
   apiVersionMatcher: '**',
   isNamespaced: false,
   navigatorPath: [navSectionNames.K8S_RESOURCES, navSectionNames.STORAGE, 'PersistentVolumes'],

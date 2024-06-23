@@ -1,6 +1,6 @@
 import {useCallback, useEffect, useMemo, useState} from 'react';
 
-import {Skeleton, Tooltip} from 'antd';
+import {Skeleton} from 'antd';
 
 import {groupBy, size, uniq} from 'lodash';
 
@@ -63,8 +63,8 @@ const ClusterPane: React.FC<InjectedPanelProps> = props => {
   useEffect(() => {
     let tempMenu: DashboardMenu[] = [
       {
-        key: 'Overview',
-        label: 'Overview',
+        key: '',
+        label: '',
         children: [],
       },
     ];
@@ -108,23 +108,23 @@ const ClusterPane: React.FC<InjectedPanelProps> = props => {
     const kinds = uniq(Object.keys(groupedResources));
     const nonCustomKinds = tempMenu.map(i => i.children?.map(t => t.label)).flat();
     const customKinds = kinds.filter(k => !nonCustomKinds.includes(k));
-    const customResources: DashboardMenu = {
-      key: navSectionNames.CUSTOM,
-      label: navSectionNames.CUSTOM,
-      children: [],
-    };
+    // const customResources: DashboardMenu = {
+    //   key: navSectionNames.CUSTOM,
+    //   label: navSectionNames.CUSTOM,
+    //   children: [],
+    // };
 
-    if (customKinds.length > 0) {
-      customKinds.forEach(kind => {
-        customResources.children?.push({
-          key: `${kind}`,
-          label: kind,
-          children: [],
-          resourceCount: size(groupedResources[kind]) ?? 0,
-        });
-      });
-      tempMenu.push(customResources);
-    }
+    // if (customKinds.length > 0) {
+    //   customKinds.forEach(kind => {
+    //     customResources.children?.push({
+    //       key: `${kind}`,
+    //       label: kind,
+    //       children: [],
+    //       resourceCount: size(groupedResources[kind]) ?? 0,
+    //     });
+    //   });
+    //   tempMenu.push(customResources);
+    // }
 
     dispatch(setDashboardMenuList(tempMenu));
   }, [
@@ -148,14 +148,6 @@ const ClusterPane: React.FC<InjectedPanelProps> = props => {
           isOpen={Boolean(isActive)}
           title="Resources"
           actions={<TitleBarCount count={size(clusterResourceMeta)} isActive={Boolean(isActive)} />}
-          description={
-            <S.ConnectedContainer>
-              <Tooltip title="Successfully connected!" placement="bottomRight">
-                <S.CheckCircleFilled />
-              </Tooltip>
-              <S.ConnectedText>{currentContext}</S.ConnectedText>
-            </S.ConnectedContainer>
-          }
         />
       }
     >
@@ -164,15 +156,6 @@ const ClusterPane: React.FC<InjectedPanelProps> = props => {
           <Skeleton />
         ) : (
           <>
-            <S.StickyContainer>
-              <S.Input
-                style={{marginBottom: 8}}
-                placeholder=""
-                prefix={<S.SearchOutlined />}
-                onChange={(event: any) => setFilterText(event.target.value)}
-                allowClear
-              />
-            </S.StickyContainer>
             <DashboardFilteredMenu filterText={filterText} />
           </>
         )}

@@ -6,7 +6,7 @@ import {ResourceMeta} from '@shared/models/k8sResource';
 import {ResourceKindHandler} from '@shared/models/resourceKindHandler';
 
 const PodHandler: ResourceKindHandler = {
-  kind: 'Pod',
+  kind: 'Nextflow Subtasks',
   apiVersionMatcher: '**',
   isNamespaced: true,
   navigatorPath: [navSectionNames.K8S_RESOURCES, navSectionNames.WORKLOADS, 'Pods'],

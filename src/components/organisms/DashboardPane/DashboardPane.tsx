@@ -5,8 +5,9 @@ import {DashboardAccordionType} from '@shared/models/dashboard';
 
 import ClusterPane from './ClusterPane';
 import * as S from './DashboardPane.style';
-import HelmReleasesPane from './HelmReleasesPane';
-import ImagesPane from './ImagesPane';
+
+// import HelmReleasesPane from './HelmReleasesPane';
+// import ImagesPane from './ImagesPane';
 
 const accordionsKeys = ['cluster-resources', 'helm-releases', 'images'] as DashboardAccordionType[];
 
@@ -31,8 +32,8 @@ const DashboardPane = () => {
           }
         >
           <ClusterPane key="cluster-resources" />
-          <HelmReleasesPane key="helm-releases" />
-          <ImagesPane key="images" />
+          {/* <HelmReleasesPane key="helm-releases" />
+          <ImagesPane key="images" /> */}
         </S.Collapse>
       </S.CollapseContainer>
     </S.Container>
